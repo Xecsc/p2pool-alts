@@ -675,7 +675,7 @@ nets = dict(
         CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'franko') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/franko/') if platform.system() == 'Darwin' else os.path.expanduser('~/.franko'), 'franko.conf'),
         BLOCK_EXPLORER_URL_PREFIX='http://frk.cryptocoinexplorer.com/block/',
         ADDRESS_EXPLORER_URL_PREFIX='http://frk.cryptocoinexplorer.com/address/',
-	TX_EXPLORER_URL_PREFIX='http://frk.cryptocoinexplorer.com//tx/',
+	TX_EXPLORER_URL_PREFIX='http://frk.cryptocoinexplorer.com/tx/',
         SANE_TARGET_RANGE=(2**256//100000000 - 1, 2**256//1000 - 1),
         DUMB_SCRYPT_DIFF=2**16,
 	DUST_THRESHOLD=0.03e8,
