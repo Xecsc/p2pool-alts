@@ -591,7 +591,27 @@ nets = dict(
         BOOTSTRAP_ADDRS='next.afraid.org coinminer.net'.split(' '),
         ANNOUNCE_CHANNEL='#p2pool-frk',
         VERSION_CHECK=lambda v: True,
-    ), 
+    ),
+     fastcoin=math.Object(
+        PARENT=networks.nets['fastcoin'],
+        SHARE_PERIOD=9, # seconds
+        NEW_SHARE_PERIOD=9, # seconds
+        CHAIN_LENGTH=24*60*60//10, # shares
+        REAL_CHAIN_LENGTH=24*60*60//10, # shares
+        TARGET_LOOKBEHIND=200, # shares
+        SPREAD=150, # blocks
+        NEW_SPREAD=150, # blocks
+        IDENTIFIER='3bcc5afe1939ff7c'.decode('hex'),
+        PREFIX='50879b32a0b48a21'.decode('hex'),
+        P2P_PORT=23650,
+        MIN_TARGET=0,
+        MAX_TARGET=2**256//2**20 - 1,
+        PERSIST=True,
+        WORKER_PORT=5150,
+        BOOTSTRAP_ADDRS='190.191.141.145 75.135.81.210 69.57.165.193 168.61.25.9'.split(' '),
+        ANNOUNCE_CHANNEL='#p2pool-alt',
+        VERSION_CHECK=lambda v: True,
+    ),
 
 )
 for net_name, net in nets.iteritems():
